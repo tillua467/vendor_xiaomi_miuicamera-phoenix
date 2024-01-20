@@ -9,7 +9,7 @@ soong_namespace {
 
 android_app_import {
     name: "MiuiCamera",
-    apk: "prebuilt/MiuiCamera.apk",
+    apk: "prebuilt/MiuiCamera/MiuiCamera.apk",
     overrides: [
         "Aperture",
         "Camera2",
@@ -26,7 +26,7 @@ android_app_import {
 
 android_app_import {
     name: "MiuiExtraPhoto",
-    apk: "prebuilt/MiuiExtraPhoto.apk",
+    apk: "prebuilt/MiuiExtraPhoto/MiuiExtraPhoto.apk",
     certificate: "media",
     system_ext_specific: true,
     uses_libs: ["org.apache.http.legacy"],

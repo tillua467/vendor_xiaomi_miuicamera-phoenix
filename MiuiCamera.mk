@@ -6,18 +6,16 @@
 
 # Prebuilt APKs
 PRODUCT_PACKAGES += \
-    MiuiCamera
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    MiuiCamera
-
-ifeq ($(TARGET_CAMERA_EXTRAPHOTO),true)
-PRODUCT_PACKAGES += \
+    MiuiCamera \
     MiuiExtraPhoto
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    MiuiCamera \
     MiuiExtraPhoto
-endif
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/prebuilt/MiuiCamera/lib,$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/MiuiCamera/lib) \
+    $(call find-copy-subdir-files,*,vendor/xiaomi/miuicamera/prebuilt/MiuiExtraPhoto/lib,$(TARGET_COPY_OUT_SYSTEM_EXT)/app/MiuiExtraPhoto/lib)
 
 # Properties
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
